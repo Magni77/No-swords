@@ -22,7 +22,7 @@ class Arena(Screen):
         enemy_attack = Enemy.eattack()
         print("EA" , enemy_attack)
         enemy_defense = Enemy.edefense()
-        print("ed", enemy_defense)
+        print("ed   ", enemy_defense)
         if who % 2 == 0:
             Hero.lost_health(abs(enemy_defense - hero_attack))
         else:
