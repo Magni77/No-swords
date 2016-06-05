@@ -1,0 +1,196 @@
+<GameScrean>:
+    BoxLayout:
+        canvas:
+            Rectangle:
+                source: 'bg.png'
+                size: self.size
+                pos: self.pos
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: left_box
+                size_hint: (1, None)
+        BoxLayout:
+            orientation: 'vertical'
+            id: central_box
+            size_hint: 0.4, 1
+            Label:
+                id: label1
+                markup: True
+                size_hint: 1, 1
+
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: right_box
+                size_hint: (1, None)
+
+
+    BoxLayout:
+        id: bottom
+        size_hint: 1, 0.1
+        Button:
+            id: btn1
+            text: 'Main'
+            on_release:
+        Button:
+            text: 'Equipment'
+            on_press: app.root.current = 'eq'
+        Button:
+            text: 'Shop'
+            on_press: app.root.current = 'Shop'
+        Button:
+            text: 'Arena'
+            on_press: app.root.current = 'Arena'
+        Button:
+            text: 'Save'
+            on_press: root.manager.current = 'MainMenu'
+
+        Button:
+            text: 'Quit'
+            on_press: root.manager.current = 'MainMenu'
+
+
+<MainMenu>:
+    BoxLayout:
+        canvas:
+            Rectangle:
+                source: 'bg.png'
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            size_hint: 0.5,1
+            Button:
+                text: 'New Game'
+                on_press: root.manager.current = 'gamescrean'
+                size_hint: 0.1, 0.1
+            Button:
+                text: 'Load Game'
+                on_press: root.manager.current = 'gamescrean'
+                size_hint: 0.1, 0.1
+            Button:
+                text: 'Quit Game'
+                on_press: app.stop()
+                size_hint: 0.1, 0.1
+
+
+<ShopScr>:
+    BoxLayout:
+        canvas:
+            Rectangle:
+                source: 'armory.jpg'
+                size: self.size
+                pos: self.pos
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: myeq
+                size_hint: (1, None)
+        BoxLayout:
+            orientation: 'vertical'
+            id: central_box
+            size_hint: 0.4, 1
+            Label:
+                id: label1
+                markup: True
+                size_hint: 1, 1
+                valign: 'middle'
+
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: shopeq
+                size_hint: (1, None)
+                align: 'justified'
+
+
+    BoxLayout:
+        size_hint: 1,1
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = 'gamescrean'
+            size_hint: 1, 0.1
+
+<EqScr>:
+    BoxLayout:
+        canvas:
+            Rectangle:
+                source: 'armory.jpg'
+                size: self.size
+                pos: self.pos
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: head
+                size_hint: (1, None)
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: rh
+                size_hint: (1, None)
+
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: armor
+                size_hint: (1, None)
+
+
+    BoxLayout:
+        size_hint: 1,1
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = 'gamescrean'
+            size_hint: 1, 0.1
+
+<Arena>:
+    BoxLayout:
+        canvas:
+            Rectangle:
+                source: 'armory.jpg'
+                size: self.size
+                pos: self.pos
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: head
+                size_hint: (1, None)
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: rh
+                size_hint: (1, None)
+
+        ScrollView:
+            size_hint: 0.3, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: armor
+                size_hint: (1, None)
+
+
+    BoxLayout:
+        size_hint: 1,1
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = 'gamescrean'
+            size_hint: 1, 0.1
