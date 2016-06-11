@@ -6,6 +6,7 @@ from Hero import Hero
 import GameScrean
 import Item
 from kivy.clock import Clock
+import Hero
 
 
 class EqScr(Screen):
@@ -25,18 +26,18 @@ class EqScr(Screen):
         Clock.schedule_interval(self.update, 1 / 1.0)
 
     def get_hero_eq(self):
-        if len(GameScrean.Magni.eq) != len(self.eq):
+        if len(Hero.Magni.eq) != len(self.eq):
             self.eq.clear()
             self.eq_n.clear()
-            for x in range(len(GameScrean.Magni.eq)):
-                self.eq.append(GameScrean.Magni.return_full_eq(x))
+            for x in range(len(Hero.Magni.eq)):
+                self.eq.append(Hero.Magni.return_full_eq(x))
             for x in range(len(self.eq)):
                 if type(self.eq[x]) is Item.Weapon:
                     self.eq_n.append(str(self.eq[x].name))
-                    self.eq_weapon.append(GameScrean.Magni.return_full_eq(x))
+                    self.eq_weapon.append(Hero.Magni.return_full_eq(x))
                 elif type(self.eq[x]) is Item.Armor:
                     self.eq_armor_n.append(str(self.eq[x].name))
-                    self.eq_armor.append(GameScrean.Magni.return_full_eq(x))
+                    self.eq_armor.append(Hero.Magni.return_full_eq(x))
 
     def print_lhand(self):
         self.head.clear_widgets()
@@ -53,11 +54,11 @@ class EqScr(Screen):
             index = self.eq_n.index(text)
          #
 
-            if self.all_same(self.eq_weapon, GameScrean.Magni.lhand_weapon ):
-                GameScrean.Magni.remove_weapon("left", self.old_weapon, GameScrean.Magni)
-            GameScrean.Magni.add_weapon("left", self.eq_weapon[index], GameScrean.Magni)
+            if self.all_same(self.eq_weapon, Hero.Magni.lhand_weapon ):
+                Hero.Magni.remove_weapon("left", self.old_weapon, Hero.Magni)
+            Hero.Magni.add_weapon("left", self.eq_weapon[index], Hero.Magni)
             self.old_weapon = self.eq_weapon[index]
-            GameScrean.Magni.print_eq2()
+            Hero.Magni.print_eq2()
 
         self.spinner.bind(text=show_selected_value)
         self.head.add_widget(self.spinner)
@@ -76,11 +77,11 @@ class EqScr(Screen):
             print(self.eq_armor_n.index(text))
             index = self.eq_armor_n.index(text)
 
-            if self.all_same(self.eq_armor, GameScrean.Magni.armory):
-                GameScrean.Magni.remove_armor(self.old_arm, GameScrean.Magni)
-            GameScrean.Magni.add_armor(self.eq_armor[index], GameScrean.Magni)
+            if self.all_same(self.eq_armor, Hero.Magni.armory):
+                Hero.Magni.remove_armor(self.old_arm, Hero.Magni)
+            Hero.Magni.add_armor(self.eq_armor[index], Hero.Magni)
             self.old_arm = self.eq_armor[index]
-            GameScrean.Magni.print_armor()
+            Hero.Magni.print_armor()
 
         self.a_spinner.bind(text=show_selected_value)
         self.armor.add_widget(self.a_spinner)
@@ -92,7 +93,7 @@ class EqScr(Screen):
 
 
     def update(self, *args):
-        if len(GameScrean.Magni.eq) != len(self.eq):
+        if len(Hero.Magni.eq) != len(self.eq):
             self.get_hero_eq()
             self.print_lhand()
             self.print_armor()

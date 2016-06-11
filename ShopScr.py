@@ -1,6 +1,6 @@
 import Item
-from Hero import Hero
-
+import GameScrean
+import Hero
 #from main import MyApp
 from kivy.uix.screenmanager import Screen
 from kivy.uix.button import Button
@@ -19,7 +19,7 @@ class ShopScr(Screen):
         self.start()
         self.print_eq()
         self.print_shop_stock()
-        self.test.text = str(GameScrean.Magni.gold)
+        self.test.text = str(Hero.Magni.gold)
 
     def start(self):
         KWSword = Item.Weapon("K.W. Sword", 40, 200)
@@ -38,25 +38,25 @@ class ShopScr(Screen):
         self.stock.append(armor1)
         armor2 = Item.Armor("Randuin's Omen", 80, 300)
         self.stock.append(armor2)
-        GameScrean.Magni.print_eq()
+        Hero.Magni.print_eq()
 
     def get_item(self, x):
             return self.stock[x]
 
     def get_hero_eq(self):
         for x in range(1):
-           self.h_eq = Hero.return_full_eq(x,x)
+           self.h_eq = Hero.Magni.return_full_eq(x,x)
 
     def print_eq(self):
         try:
             self.hero_eq.clear_widgets()
             self.hero_eq.add_widget(Button(text = "Equipment", height='200sp', font_size = '15sp', markup=False))
 
-            for x in range(len(GameScrean.Magni.eq)):
-                self.hero_eq.add_widget(Button(text = str(GameScrean.Magni.return_eq(x)), height='200sp', font_size = '15sp'))
+            for x in range(len(Hero.Magni.eq)):
+                self.hero_eq.add_widget(Button(text = str(Hero.Magni.return_eq(x)), height='200sp', font_size = '15sp'))
         except:
             pass
-        self.hero_eq.height = len(GameScrean.Magni.eq)*70
+        self.hero_eq.height = len(Hero.Magni.eq)*70
 
     def print_shop_stock(self):
         try:
@@ -74,23 +74,23 @@ class ShopScr(Screen):
                 butt.bind(on_press=partial(self.buy_item, itm))
                 self.shop_eq.add_widget(butt)
 
-            GameScrean.Magni.print_eq()
+            Hero.Magni.print_eq()
             print(self.shop_eq[0])
         except:
              print("print sjop stock error")
         self.shop_eq.height = len(self.stock)*50
 
     def buy_item(self, Item, *args):
-        if(Item.price <= GameScrean.Magni.gold):
+        if(Item.price <= Hero.Magni.gold):
           #  popup = Popup(title='Are You sure', content= Button(text='BUY!'))
            # popup.open()
-            GameScrean.Magni.eq.append(Item)
+            Hero.Magni.eq.append(Item)
 
             self.stock.remove(Item)
-            GameScrean.Magni.gold -= Item.price
-            self.test.text = '[color=00ff00]' + '[size=50]' + str(GameScrean.Magni.gold) + '[/color]' + '[/size]'
+            Hero.Magni.gold -= Item.price
+            self.test.text = '[color=00ff00]' + '[size=50]' + str(Hero.Magni.gold) + '[/color]' + '[/size]'
             self.print_eq()
             self.print_shop_stock()
         else:
-            self.test.text =  '[color=ff0000]' + '[size=50]'+ str(GameScrean.Magni.gold)   + '[/color]' + '[/size]'
+            self.test.text =  '[color=ff0000]' + '[size=50]' + str(Hero.Magni.gold) + '[/color]' + '[/size]'
 

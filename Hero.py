@@ -1,4 +1,13 @@
 import Item
+import linecache
+import pickle
+
+import GameScrean
+import Item
+from kivy.uix.button import Button
+import save
+from kivy.uix.screenmanager import Screen
+from kivy.clock import Clock
 
 
 class Hero:
@@ -17,9 +26,14 @@ class Hero:
         self.rhand_weapon = []
         self.armory = []
 
+    def load_game(self):
+        with open('save.pkl', 'rb') as input_f:
+            Magni = pickle.load(input_f)
+
     def lost_health(self, health):
         if self.health > 0:
-            self.health -= health
+            if health < 0:
+                self.health += health
         else:
             self.alive = False
 
@@ -119,3 +133,61 @@ class Hero:
 
     def check(self, other):
         return self.lhand_weapon[0].name == other.name
+
+global Magni
+Magni = Hero("Magni", 500, 50, 10)
+miecz = Item.Weapon("K.W. Miecz", 50, 300)
+zbroja = Item.Armor("Zbroja", 100, 300)
+
+
+class GameScrean(Screen):
+
+    def __init__(self, **kwargs):
+        super(GameScrean, self).__init__(**kwargs)
+
+        self.rig = self.ids['right_box']
+        self.lbl = self.ids['left_box']
+        self.print_eq()
+        self.print_stats()
+        self.lbl.text = Magni.name
+        Clock.schedule_interval(self.update, 1 / 1.0)
+
+    def save_game(self):
+        #Magni.save_game()
+        save.save.save_game(self, Magni)
+
+
+    def print_eq(self):
+        try:
+            self.rig.clear_widgets()
+            self.rig.add_widget(Button(text = "Equipment", height='200sp', font_size = '15sp', markup=False))
+
+            for x in range(len(Magni.eq)):
+                self.rig.add_widget(Button( text = str(Magni.return_eq(x)), height='200sp', font_size = '15sp'))
+
+        except:
+            pass
+       #self.rig.size = (100,100)
+        self.rig.height = len(Magni.eq)*75
+
+    def print_stats(self):
+        self.lbl.clear_widgets()
+        stats_list = [' ','Health', 'Attack', 'Defense', 'Armor', 'Mana', 'Gold']
+        stats_list2 = [Magni.name, Magni.health, Magni.attack, Magni.defense, Magni.armor, Magni.mana, Magni.gold]
+        for x in range(7):
+            self.lbl.add_widget(Button(text = str(stats_list[x])+ ": " +str(stats_list2[x]), height='200sp',
+                                       font_size = '15sp'))
+        self.lbl.height = 7*50
+
+    def change_scr(self):
+        self.sm.current = 'MainMenu'
+        print("niby dziala")
+
+    def get_hero_eq(self):
+        for x in range(len(Magni.eq)):
+           self.h_eq = Magni.return_full_eq(x)
+
+    def update(self, *args):
+        GameScrean.print_eq(self)
+        GameScrean.print_stats(self)
+

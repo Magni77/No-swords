@@ -1,7 +1,6 @@
 import Hero
 import Item
 import kivy
-from GameScrean import GameScrean
 from ShopScr import ShopScr
 from kivy.app import App
 from EqScr import EqScr
@@ -19,10 +18,10 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.switch import Switch
 from kivy.clock import Clock
-
+#from GameScrean import Magni
 Builder.load_file("gui.kv")
-
-
+from Hero import GameScrean
+import save
 class MainMenu(Screen):
     def __init__(self, **kwargs):
         super(MainMenu, self).__init__(**kwargs)
@@ -30,6 +29,12 @@ class MainMenu(Screen):
     def change_scr(self):
         self.sm.current = 'gamescrean'
         print("niby dziala")
+
+    def load_game(self):
+        save.save.load_game(self)
+        print("HALO HALO")
+        print(Hero.Magni.gold)
+
 
 
 class MyApp(App):
