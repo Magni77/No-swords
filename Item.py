@@ -1,13 +1,8 @@
-import Hero
-
 
 class Item:
     def __init__(self, name, price):
         self.name = name
         self.price = price
-
-    #def use(self):
-     #   Hero.Hero.attack += self.extra_attack
 
     def check(self, other):
         return self.name == other.name
@@ -22,13 +17,13 @@ class Weapon(Item):
 
     def use(self, Hero):
         Hero.attack += self.extra_attack
-        #Hero.add_attack(self.extra_attack)
 
     def remove(self, Hero):
         Hero.attack -= self.extra_attack
 
     def get_inf(self):
         return self.extra_attack
+
 
 class Armor(Item):
     def __init__(self, name, e_armor, price):

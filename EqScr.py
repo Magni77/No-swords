@@ -1,9 +1,5 @@
 from kivy.uix.screenmanager import Screen
-from kivy.uix.dropdown import DropDown
-from kivy.uix.button import Button
 from kivy.uix.spinner import Spinner
-from Hero import Hero
-import GameScrean
 import Item
 from kivy.clock import Clock
 import Hero
@@ -53,12 +49,14 @@ class EqScr(Screen):
             print(self.eq_n.index(text))
             index = self.eq_n.index(text)
          #
-
-            if self.all_same(self.eq_weapon, Hero.Magni.lhand_weapon ):
-                Hero.Magni.remove_weapon("left", self.old_weapon, Hero.Magni)
-            Hero.Magni.add_weapon("left", self.eq_weapon[index], Hero.Magni)
-            self.old_weapon = self.eq_weapon[index]
-            Hero.Magni.print_eq2()
+            try:
+                if self.all_same(self.eq_weapon, Hero.Magni.lhand_weapon ):
+                    Hero.Magni.remove_weapon("left", self.old_weapon, Hero.Magni)
+                Hero.Magni.add_weapon("left", self.eq_weapon[index], Hero.Magni)
+                self.old_weapon = self.eq_weapon[index]
+                Hero.Magni.print_eq2()
+            except:
+                print("o cjhuk")
 
         self.spinner.bind(text=show_selected_value)
         self.head.add_widget(self.spinner)
@@ -76,21 +74,21 @@ class EqScr(Screen):
             print('The spinner', self.spinner, 'have text', text)
             print(self.eq_armor_n.index(text))
             index = self.eq_armor_n.index(text)
-
-            if self.all_same(self.eq_armor, Hero.Magni.armory):
-                Hero.Magni.remove_armor(self.old_arm, Hero.Magni)
-            Hero.Magni.add_armor(self.eq_armor[index], Hero.Magni)
-            self.old_arm = self.eq_armor[index]
-            Hero.Magni.print_armor()
+            try:
+                if self.all_same(self.eq_armor, Hero.Magni.armory):
+                    Hero.Magni.remove_armor(self.old_arm, Hero.Magni)
+                Hero.Magni.add_armor(self.eq_armor[index], Hero.Magni)
+                self.old_arm = self.eq_armor[index]
+                Hero.Magni.print_armor()
+            except:
+                print("d")
 
         self.a_spinner.bind(text=show_selected_value)
         self.armor.add_widget(self.a_spinner)
 
     def all_same(self, itm1, itm2):
-       # return all(items2[0] == items[0])
         for i in set(itm1) & set(itm2):
             return True
-
 
     def update(self, *args):
         if len(Hero.Magni.eq) != len(self.eq):

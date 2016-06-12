@@ -19,5 +19,5 @@ class Enemy:
         return (self.power)*(self.attack/2)
 
     def edefense(self):
-        return (self.health+self.armor)*(self.defense/10)
+        return (+self.armor)*(self.defense/10)
 

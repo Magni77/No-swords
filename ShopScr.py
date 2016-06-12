@@ -1,13 +1,9 @@
 import Item
-import GameScrean
 import Hero
-#from main import MyApp
 from kivy.uix.screenmanager import Screen
 from kivy.uix.button import Button
 from functools import partial
-from kivy.uix.popup import Popup
-from kivy.uix.label import Label
-import GameScrean
+
 
 class ShopScr(Screen):
     def __init__(self, **kwargs):

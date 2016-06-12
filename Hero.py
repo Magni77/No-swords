@@ -1,6 +1,3 @@
-import Item
-import linecache
-import pickle
 
 import GameScrean
 import Item
@@ -8,6 +5,7 @@ from kivy.uix.button import Button
 import save
 from kivy.uix.screenmanager import Screen
 from kivy.clock import Clock
+from Arena import Arena
 
 
 class Hero:
@@ -21,14 +19,10 @@ class Hero:
         self.eq = []
         self.alive = True
         self.mana = 10
-        self.gold = 10000
+        self.gold = 1000
         self.lhand_weapon = []
         self.rhand_weapon = []
         self.armory = []
-
-    def load_game(self):
-        with open('save.pkl', 'rb') as input_f:
-            Magni = pickle.load(input_f)
 
     def lost_health(self, health):
         if self.health > 0:
@@ -135,7 +129,7 @@ class Hero:
         return self.lhand_weapon[0].name == other.name
 
 global Magni
-Magni = Hero("Magni", 500, 50, 10)
+Magni = Hero("Magni", 1000, 50, 10)
 miecz = Item.Weapon("K.W. Miecz", 50, 300)
 zbroja = Item.Armor("Zbroja", 100, 300)
 
@@ -155,7 +149,6 @@ class GameScrean(Screen):
     def save_game(self):
         #Magni.save_game()
         save.save.save_game(self, Magni)
-
 
     def print_eq(self):
         try:
@@ -190,4 +183,9 @@ class GameScrean(Screen):
     def update(self, *args):
         GameScrean.print_eq(self)
         GameScrean.print_stats(self)
+
+    def sleep(self):
+        Magni.health = 1000
+        Arena.sleep(Arena)
+
 

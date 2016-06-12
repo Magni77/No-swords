@@ -38,6 +38,9 @@
             text: 'Main'
             on_release:
         Button:
+            text: 'Sleep'
+            on_press: root.sleep()
+        Button:
             text: 'Equipment'
             on_press: app.root.current = 'eq'
         Button:
@@ -66,11 +69,15 @@
             size_hint: 0.5,1
             Button:
                 text: 'New Game'
-                on_press: root.manager.current = 'gamescrean'
+                on_press:
+                    root.manager.current = 'gamescrean'
+
                 size_hint: 0.1, 0.1
             Button:
                 text: 'Load Game'
-                on_press: root.load_game()
+                on_press:
+                    root.load_game()
+                    root.manager.current = 'gamescrean'
                 size_hint: 0.1, 0.1
             Button:
                 text: 'Quit Game'
@@ -161,46 +168,64 @@
     BoxLayout:
         canvas:
             Rectangle:
-                source: 'armory.jpg'
+                source: 'arena.jpg'
                 size: self.size
                 pos: self.pos
-        ScrollView:
-            size_hint: 0.3, 1
-            do_scroll_x: False
-            BoxLayout:
-                orientation: 'vertical'
-                id: head
-                size_hint: (1, None)
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.6, 1
+            Label:
+                id: label
+                markup: True
+                size_hint: 1, 1
+            Label:
+                id: label2
+                markup: True
+                size_hint: 1, 1
+            Label:
+                id: label3
+                markup: True
+                size_hint: 1, 1
 
         ScrollView:
-            size_hint: 0.3, 1
-            do_scroll_x: False
-            BoxLayout:
-                orientation: 'vertical'
-                id: rh
-                size_hint: (1, None)
-
-
-        ScrollView:
-            size_hint: 0.3, 1
+            size_hint: 0.4, 1
             do_scroll_x: False
             BoxLayout:
                 orientation: 'vertical'
                 id: armor
-                size_hint: (1, None)
+                size_hint: (1, .5)
                 Button:
                     text: 'Normal Attack'
-                    on_press: root.manager.current = 'gamescrean'
-                    size_hint: 1, 0.2
+                    on_press:
+                        root.choose_attack("normal")
+                        root.battle()
+                    size_hint: 1, 1
                 Button:
-                    text: 'Another Attack'
-                    on_press: root.manager.current = 'gamescrean'
-                    size_hint: 1, 0.2
-
+                    text: 'Strong Attack'
+                    on_press:
+                        root.choose_attack("strong")
+                        root.battle()
+                    size_hint: 1, 1
+                Button:
+                    text: 'Light Attack'
+                    on_press:
+                        root.choose_attack("light")
+                        root.battle()
+                    size_hint: 1, 1
+                Button:
+                    text: 'Defend'
+                    on_press:
+                        root.choose_attack("defend")
+                        root.battle()
+                    size_hint: 1, 1
 
     BoxLayout:
         size_hint: 1,1
         Button:
             text: 'Back'
             on_press: root.manager.current = 'gamescrean'
-            size_hint: 1, 0.1
+            size_hint: 0.1, 0.1
+        Button:
+            text: 'Start battle'
+            on_press: root.update()
+            size_hint: .1, 0.1
