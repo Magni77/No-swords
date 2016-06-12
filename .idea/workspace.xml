@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cdfb0fb-df66-401d-a69d-b841964c53e0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Warrior.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Arena.py" afterPath="$PROJECT_DIR$/Arena.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Enemy.py" afterPath="$PROJECT_DIR$/Enemy.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EqScr.py" afterPath="$PROJECT_DIR$/EqScr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hero.py" afterPath="$PROJECT_DIR$/Hero.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Item.py" afterPath="$PROJECT_DIR$/Item.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopScr.py" afterPath="$PROJECT_DIR$/ShopScr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.kv" afterPath="$PROJECT_DIR$/gui.kv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/save.py" afterPath="$PROJECT_DIR$/save.py" />
-    </list>
+    <list default="true" id="9cdfb0fb-df66-401d-a69d-b841964c53e0" name="Default" comment="" />
     <ignored path="sem_pro_0.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,45 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.39215687">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Python/#D:/Documents/GitHub/sem_pro_0 - Copy/Enemy.py" pinned="false" current-in-tab="true">
-        <entry file="uml://Python/#D:/Documents/GitHub/sem_pro_0 - Copy/Enemy.py">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>Python</ID>
-              <OriginalElement>#D:/Documents/GitHub/sem_pro_0 - Copy/Enemy.py</OriginalElement>
-              <nodes>
-                <node x="17.0" y="158.0">Enemy.Enemy</node>
-                <node x="0.0" y="0.0">_collections_abc.Hashable</node>
-                <node x="38.0" y="79.0">object</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="object" target="_collections_abc.Hashable">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="Enemy.Enemy" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="70.5" y="93.5" />
-              <SelectedNodes>
-                <node>object</node>
-              </SelectedNodes>
-              <Categories />
             </state>
           </provider>
         </entry>
@@ -540,7 +497,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465686441702</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Alpha v.1.0">
+      <created>1465743343137</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1465743343137</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -586,13 +549,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="101" y="-8" width="1827" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.49801925" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16915423" sideWeight="0.57941437" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.4934918" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17653167" sideWeight="0.48979592" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17653167" sideWeight="0.48979592" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29202038" sideWeight="0.42058563" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15680166" sideWeight="0.49518958" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14770798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1124,42 +1087,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://Python/#D:/Documents/GitHub/sem_pro_0 - Copy/Enemy.py">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>Python</ID>
           <OriginalElement>#D:/Documents/GitHub/sem_pro_0 - Copy/Enemy.py</OriginalElement>
           <nodes>
-            <node x="17.0" y="158.0">Enemy.Enemy</node>
-            <node x="0.0" y="0.0">_collections_abc.Hashable</node>
-            <node x="38.0" y="79.0">object</node>
+            <node x="" y="">Enemy.Enemy</node>
+            <node x="" y="">_collections_abc.Hashable</node>
+            <node x="" y="">object</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="object" target="_collections_abc.Hashable">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Enemy.Enemy" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
+          <edges />
           <settings layout="Hierarchic Group" zoom="1.0" x="70.5" y="93.5" />
-          <SelectedNodes>
-            <node>object</node>
-          </SelectedNodes>
+          <SelectedNodes />
           <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39215687">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
