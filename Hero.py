@@ -174,7 +174,6 @@ class GameScrean(Screen):
 
     def change_scr(self):
         self.sm.current = 'MainMenu'
-        print("niby dziala")
 
     def get_hero_eq(self):
         for x in range(len(Magni.eq)):

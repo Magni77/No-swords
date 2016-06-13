@@ -56,7 +56,7 @@ class EqScr(Screen):
                 self.old_weapon = self.eq_weapon[index]
                 Hero.Magni.print_eq2()
             except:
-                print("o cjhuk")
+                print("errror")
 
         self.spinner.bind(text=show_selected_value)
         self.head.add_widget(self.spinner)
